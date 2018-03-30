@@ -1,0 +1,22 @@
+[
+    {
+        "caption": "Moog: Compile",
+        "command": "compile"
+    },
+    {
+        "caption": "Moog: Test Project",
+        "command": "test_project"
+    },
+    {
+        "caption": "Moog: New class",
+        "command": "new_class"
+    },
+    {
+        "caption": "Moog: New Tester",
+        "command": "new_tester"
+    },
+    {
+        "caption": "Moog: New Header",
+        "command": "new_header"
+    }
+]
