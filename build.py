@@ -175,12 +175,8 @@ class MoogBuildCommand(sublime_plugin.WindowCommand):
 
 def _get_project_files(filename):
     file_dir = os.path.dirname(filename)
-    print("A: " + file_dir)
     project_root = os.path.abspath(os.path.join(file_dir, ".."))
-    print("B: " + project_root)
     bld_dir = os.path.join(project_root, "bld", VS_VERSION)
-    print("C: " + bld_dir)
-    print("D: " + str(glob.glob(os.path.join(bld_dir, "*.vcxproj"))))
     if os.path.isdir(bld_dir):
         return glob.glob(os.path.join(bld_dir, "*.vcxproj"))
 
