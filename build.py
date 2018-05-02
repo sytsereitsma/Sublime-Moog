@@ -44,18 +44,26 @@ class MoogBuildCommand(sublime_plugin.WindowCommand):
 
         return project_file
 
-    def get_arguments(self, project_file, test):
+    def get_arguments(self, filename, test, compile_):
+        project_file = self.get_project_file(filename, test)
+        if not project_file:
+            return
+
         vs_version = "VS2015"
         args = ["cmd", "/C", MSBUILD[vs_version]]
         args.append(project_file)
+        args.append('/t:ClCompile')
         args.append('/p:Configuration=Debug')
         args.append('/maxcpucount')
-        args.append('/v:q')  # Only log warnings and errors
+        args.append('/v:m')  # Only log warnings and errors
 
-        if test:
+        if compile_:
+            args.append('/t:ClCompile')
+            args.append('/p:SelectedFile={}'.format(os.path.basename(filename)))
+        elif test:
             project_dir = os.path.dirname(project_file)
             relative_root = project_dir
-            if "Libs" in project_file:
+            if "libs" in project_file.lower():
                 relative_root += "/../../../../"
             else:
                 relative_root += "/../../../"
@@ -66,16 +74,18 @@ class MoogBuildCommand(sublime_plugin.WindowCommand):
             project_name = os.path.basename(project_file)
             texter_exe = project_name.replace(".vcxproj", "D.exe")
             tester = os.path.join(root_dir, texter_exe)
-            working_dir = os.path.abspath(project_dir + "/../..")
+            working_dir = os.path.abspath(project_dir + "/../../")
             args.append('&&')
             args.append('cd')
             args.append(working_dir)
             args.append('&&')
             args.append(tester)
-
+            self.log_in_panel("Tester {}\n".format(tester))
+            self.log_in_panel("Working dir for tester {}\n".format(working_dir))
+        print(" ".join(args))
         return args
 
-    def run(self, test=False, kill=False):
+    def run(self, test=False, kill=False, compile_=False):
         if kill:
             if self.proc:
                 self.killed = True
@@ -99,7 +109,7 @@ class MoogBuildCommand(sublime_plugin.WindowCommand):
             #"  c:\projects\head\libs\jsoncpp\src\src\lib_json\json_value.cpp(234): warning C4100: 'msg': unreferenced formal parameter [C:\Projects\HEAD\Libs\jsoncpp\bld\VS2015\jsoncpp.vcxproj]"
             settings.set(
                 'result_file_regex',
-                r'^\s+(.+)\((\d+)\):\s(.+)'
+                r'^\s*(.+)\((\d+)\):\s(.+)'
             )
             settings.set(
                 'result_line_regex',
@@ -113,12 +123,11 @@ class MoogBuildCommand(sublime_plugin.WindowCommand):
             self.proc = None
 
         vars = self.window.extract_variables()
-        project_file = self.get_project_file(vars['file'], test)
-        if not project_file:
+        args = self.get_arguments(vars['file'], test, compile_)
+        if not args:
             return
 
-        args = self.get_arguments(project_file, test)
-
+        project_file = self.get_project_file(vars['file'], test)
         self.proc = subprocess.Popen(
             args,
             stdout=subprocess.PIPE,
@@ -178,7 +187,11 @@ def _get_project_files(filename):
     project_root = os.path.abspath(os.path.join(file_dir, ".."))
     bld_dir = os.path.join(project_root, "bld", VS_VERSION)
     if os.path.isdir(bld_dir):
-        return glob.glob(os.path.join(bld_dir, "*.vcxproj"))
+        project_files = glob.glob(os.path.join(bld_dir, "*.vcxproj"))
+        if "smartestonelib" in filename.lower():
+            project_files = list(filter(lambda f: "smartestonelib" in os.path.basename(f.lower()), project_files))
+
+        return project_files
 
     return []
 
