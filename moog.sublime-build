@@ -1,0 +1,16 @@
+{
+    "target": "moog_build",
+    "variants": [
+        {
+            "name": "Test",
+            "test": true
+        },
+        {
+            "name": "Build project"
+        },
+        {
+            "name": "Compile file",
+            "compile_": true
+        }
+    ]
+}

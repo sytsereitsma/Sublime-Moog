@@ -13,12 +13,12 @@ MSBUILD = {
 
 #Copied from https://www.sublimetext.com/docs/3/build_systems.html#advanced_example
 class MoogBuildCommand(sublime_plugin.WindowCommand):
-
     encoding = 'utf-8'
     killed = False
     proc = None
     panel = None
     panel_lock = threading.Lock()
+    test_args = "--gtest_filter=*"
 
     def is_enabled(self, lint=False, integration=False, kill=False):
         # The Cancel build option should only be available
@@ -52,10 +52,9 @@ class MoogBuildCommand(sublime_plugin.WindowCommand):
         vs_version = "VS2015"
         args = ["cmd", "/C", MSBUILD[vs_version]]
         args.append(project_file)
-        args.append('/t:ClCompile')
         args.append('/p:Configuration=Debug')
         args.append('/maxcpucount')
-        args.append('/v:m')  # Only log warnings and errors
+        #args.append('/v:m')  # Only log warnings and errors
 
         if compile_:
             args.append('/t:ClCompile')
@@ -80,10 +79,17 @@ class MoogBuildCommand(sublime_plugin.WindowCommand):
             args.append(working_dir)
             args.append('&&')
             args.append(tester)
+            args.append(self.test_args)
+
             self.log_in_panel("Tester {}\n".format(tester))
-            self.log_in_panel("Working dir for tester {}\n".format(working_dir))
+            self.log_in_panel("test arguments {}\n".format(self.test_args))
         print(" ".join(args))
         return args
+
+
+    def run_test(self, test_args: str) -> None:
+        self.test_args = test_args
+        self.run_impl(True, False)
 
     def run(self, test=False, kill=False, compile_=False):
         if kill:
@@ -92,11 +98,21 @@ class MoogBuildCommand(sublime_plugin.WindowCommand):
                 self.proc.terminate()
             return
 
+        if test:
+            self.window.show_input_panel("Test arguments",
+                                         self.test_args,
+                                         self.run_test,
+                                         None, None)
+        else:
+            self.run_impl(False, compile_)
+
+    def run_impl(self, test=False, compile_=False):
         # A lock is used to ensure only one thread is
         # touching the output panel at a time
         with self.panel_lock:
             # Creating the panel implicitly clears any previous contents
             self.panel = self.window.create_output_panel('exec')
+            self.panel.run_command('moveTo', {'position': "eof"})
 
             # Enable result navigation. The result_file_regex does
             # the primary matching, but result_line_regex is used
@@ -197,6 +213,11 @@ def _get_project_files(filename):
 
 
 def _get_test_project(filename):
+    if "fos" in filename.lower():
+        dirname = os.path.dirname(filename)
+        futil_tester = os.path.join (dirname, "../../Futil/bld/VS2015/FutilLibTester.vcxproj")
+        return futil_tester
+
     project_files = _get_project_files(filename)
     for project_file in project_files:
         if project_file.endswith("Tester.vcxproj"):
