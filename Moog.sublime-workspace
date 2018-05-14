@@ -1,0 +1,498 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"mo",
+				"mock_glob\tparam"
+			],
+			[
+				"Ma",
+				"MagicMock\tclass"
+			],
+			[
+				"mPix",
+				"mPixels"
+			],
+			[
+				"mij",
+				"mijn_classified"
+			],
+			[
+				"com",
+				"companies"
+			],
+			[
+				"__i",
+				"__is_any"
+			],
+			[
+				"tr",
+				"transaction"
+			],
+			[
+				"is",
+				"__is_climbing"
+			],
+			[
+				"gr",
+				"group_sum"
+			],
+			[
+				"c",
+				"companies"
+			],
+			[
+				"mP",
+				"mParasitePowered"
+			],
+			[
+				"ioW",
+				"ioWiFly"
+			],
+			[
+				"Co",
+				"CommandModeContext"
+			],
+			[
+				"Comm",
+				"CommandMode"
+			],
+			[
+				"in",
+				"inTries"
+			],
+			[
+				"m",
+				"millis"
+			],
+			[
+				"Fa",
+				"fakeit"
+			],
+			[
+				"prin",
+				"println"
+			],
+			[
+				"deb",
+				"debugON"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "tests/test_locator.py",
+			"settings":
+			{
+				"buffer_size": 2022,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "helpers/locator.py",
+			"settings":
+			{
+				"buffer_size": 1545,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 137.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"Unit",
+				"UnitTesting: Test Current Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"c++",
+				"Set Syntax: C++"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"remove pa",
+				"Package Control: Remove Package"
+			],
+			[
+				"install pa",
+				"Package Control: Install Package"
+			],
+			[
+				"Snippet: ",
+				"Snippet: Lorem ipsum"
+			]
+		],
+		"width": 412.0
+	},
+	"console":
+	{
+		"height": 321.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/sytse/AppData/Roaming/Sublime Text 3/Packages/Moog",
+		"/C/Users/sytse/AppData/Roaming/Sublime Text 3/Packages/Moog/helpers",
+		"/C/Users/sytse/AppData/Roaming/Sublime Text 3/Packages/Moog/tests"
+	],
+	"file_history":
+	[
+		"/C/Users/sytse/AppData/Roaming/Sublime Text 3/Packages/Moog/Moog.sublime-project",
+		"/C/Users/sytse/AppData/Roaming/Sublime Text 3/Packages/Moog/helpers/__init__.py",
+		"/C/Users/sytse/AppData/Roaming/Sublime Text 3/Packages/EasyClangComplete/tests/test_c_cpp_properties.py",
+		"/C/Users/sytse/AppData/Roaming/Sublime Text 3/Packages/EasyClangComplete/unittesting.json",
+		"/C/Users/sytse/AppData/Roaming/Sublime Text 3/Packages/Moog/.travis.yml",
+		"/C/Users/sytse/AppData/Roaming/Sublime Text 3/Packages/Moog/tests/test_locator.py",
+		"/C/Users/sytse/AppData/Roaming/Sublime Text 3/Packages/Moog/build.py",
+		"/C/Users/sytse/AppData/Roaming/Sublime Text 3/Packages/Moog/utils.py",
+		"/C/Users/sytse/AppData/Roaming/Sublime Text 3/Packages/Moog/helpers/locator.py",
+		"/C/Users/sytse/AppData/Roaming/Sublime Text 3/Packages/Moog/unittesting.json",
+		"/C/Users/sytse/AppData/Roaming/Sublime Text 3/Packages/EasyClangComplete/tests/__init__.py",
+		"/C/Users/sytse/AppData/Roaming/Sublime Text 3/Packages/Moog/__init__.py",
+		"/C/Users/sytse/AppData/Roaming/Sublime Text 3/Packages/Moog/.coveragerc",
+		"/C/Users/sytse/AppData/Roaming/Sublime Text 3/Packages/Moog/test/test_locator.py",
+		"/C/Users/sytse/AppData/Roaming/Sublime Text 3/Packages/Anaconda/test/__init__.py",
+		"/C/Users/sytse/AppData/Roaming/Sublime Text 3/Packages/Anaconda/setup.py",
+		"/C/Users/sytse/AppData/Roaming/Sublime Text 3/Packages/Anaconda/test/test_lint.py",
+		"/C/Users/sytse/AppData/Roaming/Sublime Text 3/Packages/Anaconda/test/test_doc.py",
+		"/C/Users/sytse/AppData/Roaming/Sublime Text 3/Packages/EasyClangComplete/tests/test_cmake_file.py",
+		"/C/Users/sytse/AppData/Roaming/Sublime Text 3/Packages/Anaconda/README.md",
+		"/C/Users/sytse/AppData/Roaming/Sublime Text 3/Packages/User/Anaconda.sublime-settings",
+		"/D/Projects/ThrusterLights/README.md",
+		"/D/tmp/simple.proto",
+		"/D/Projects/ThrusterLights/ThrusterLights.ino",
+		"/C/Users/sytse/VirtualBox VMs/XUbuntu/Logs/VBoxHardening.log",
+		"/C/Users/sytse/VirtualBox VMs/Windows XP/Windows XP.vbox",
+		"/C/Users/sytse/VirtualBox VMs/XUbuntu/XUbuntu.vbox",
+		"/C/Users/sytse/.VirtualBox/VirtualBox.xml",
+		"/D/Projects/Financien/sytse2017.csv",
+		"/D/Projects/Financien/Transacties Hanneke prive 2017.txt",
+		"/D/Projects/Financien/process.py",
+		"/C/Users/sytse/AppData/Roaming/Sublime Text 3/Packages/Terminal/Terminal.sublime-settings",
+		"/C/Users/sytse/AppData/Roaming/Sublime Text 3/Packages/User/Terminal (Windows).sublime-settings",
+		"/D/Moog/SmarTESTOneDevelopment/Libs/MIMOServerLib/src/PseudoChannel.h",
+		"/X/Dropbox/Licenties/Eagle/20140811_6D16927462.key",
+		"/C/Users/sytse/Documents/Arduino/libraries/OneWire/OneWire.h",
+		"/C/Users/sytse/Documents/Arduino/libraries/OneWire/OneWire.cpp",
+		"/C/Users/sytse/AppData/Roaming/Sublime Text 3/Packages/User/CTags.sublime-settings",
+		"/C/Users/sytse/AppData/Roaming/Sublime Text 3/Packages/CTags/CTags.sublime-settings",
+		"/D/Projects/TemperatureMonitor/TemperatureMonitor.ino",
+		"/D/Projects/TemperatureMonitor/src/main.ino",
+		"/D/Projects/TemperatureMonitor/project.ino",
+		"/D/Projects/restwise/doc/data/assign_switch.LOG",
+		"/D/Projects/restwise/doc/data/discover_nodes.LOG",
+		"/D/Projects/restwise/doc/data/add_and_remove_existing_A404A5-converted.LOG",
+		"/D/Projects/restwise/doc/data/add_and_remove_existing-converted.LOG",
+		"/D/Projects/restwise/doc/data/add_and_remove_existing_A404A5-2-converted.LOG",
+		"/D/Projects/restwise/doc/data/converted_data.txt",
+		"/D/Projects/restwise/doc/data/add_and_remove_existing_A400E2-converted.LOG",
+		"/D/Projects/restwise/doc/data/discover_nodes-converted.LOG",
+		"/D/Projects/restwise/doc/data/add_and_remove-converted.LOG",
+		"/D/Projects/restwise/doc/data/first_start.LOG",
+		"/D/Projects/restwise/doc/data/first_start-converted.LOG",
+		"/D/Projects/Plugwise-2-py/README.md",
+		"/F/Backup_Users/sytse/AppData/Local/Plugwise/Source/DB/PlugwiseData.mdb",
+		"/C/Users/sytse/jsonlint/jsonnet-0.9.5/core/unicode.h",
+		"/D/Projects/Smart-Citizen-Kit/native/arduino-stubs/Serial.h",
+		"/D/Projects/Smart-Citizen-Kit/test/SCKServerTester.cpp",
+		"/D/Projects/Smart-Citizen-Kit/sck_beta_v0_9/SCKAmbient.cpp",
+		"/D/Projects/Smart-Citizen-Kit/native/arduino-stubs/Arduino.cpp",
+		"/D/Projects/Smart-Citizen-Kit/sck_beta_v0_9/sck_beta_v0_9.ino",
+		"/D/Projects/Smart-Citizen-Kit/sck_beta_v0_9/SCKBase.cpp",
+		"/D/Projects/Smart-Citizen-Kit/native/arduino-stubs/Serial.cpp",
+		"/D/Projects/Smart-Citizen-Kit/sck_beta_v0_9/HTTPClient.h",
+		"/D/Projects/Smart-Citizen-Kit/sck_beta_v0_9/HTTPClient.cpp",
+		"/D/Projects/Smart-Citizen-Kit/test/HTTPClientTester.cpp",
+		"/D/Projects/Smart-Citizen-Kit/test/TestHelpers.h",
+		"/D/Projects/Smart-Citizen-Kit/test/SCKBaseTester.cpp",
+		"/D/Projects/Smart-Citizen-Kit/sck_beta_v0_9/Constants.h",
+		"/D/Projects/Smart-Citizen-Kit/sck_beta_v0_9/SCKBase.h",
+		"/D/Projects/Smart-Citizen-Kit/sck_beta_v0_9/SCKServer.cpp",
+		"/D/Projects/Smart-Citizen-Kit/native/arduino-stubs/Arduino.h",
+		"/D/Projects/Smart-Citizen-Kit/test/WiFlyTester.cpp",
+		"/D/Projects/Smart-Citizen-Kit/sck_beta_v0_9/SCKServer.h",
+		"/D/Projects/Smart-Citizen-Kit/sck_beta_v0_9/CommandModeContext.h",
+		"/D/Projects/Smart-Citizen-Kit/test/CommandModeContextTester.cpp",
+		"/D/Projects/Smart-Citizen-Kit/sck_beta_v0_9/CommandModeContext.cpp",
+		"/D/Projects/Smart-Citizen-Kit/test/CommandModeTester.cpp",
+		"/D/bin/uncrustify/cfg/defaults.cfg",
+		"/D/Projects/Smart-Citizen-Kit/uncrustify.cfg",
+		"/D/Projects/Smart-Citizen-Kit/sck_beta_v0_9/AccumulatorFilter.h",
+		"/D/Projects/Smart-Citizen-Kit/sck_beta_v0_9/SCKAmbient.h",
+		"/D/Projects/Smart-Citizen-Kit/sck_beta_v0_9/Constants.cpp",
+		"/D/bin/uncrustify/cfg/linux-indent.cfg",
+		"/D/bin/uncrustify/cfg/gnu-indent.cfg",
+		"/D/bin/AStyle/src/astyle_main.cpp",
+		"/D/bin/uncrustify/cfg/freebsd.cfg",
+		"/D/bin/uncrustify/cfg/msvc.cfg",
+		"/D/bin/uncrustify/cfg/linux.cfg",
+		"/C/Users/sytse/mercurial.ini",
+		"/F/Backup_Users/sytse/mercurial.ini",
+		"/F/Backup_Users/sytse/VirtualBox VMs/XP/XP.vbox",
+		"/D/Softsyde/HIS/TankSludgeProfiler-SVN/TankSludgeProfiler/Installer/Installer.wixproj",
+		"/D/Softsyde/HIS/TankSludgeProfiler-SVN/build.gradle",
+		"/D/Softsyde/HIS/TankSludgeProfiler-SVN/ThirdPartyLibraries/build/poco/CHANGELOG",
+		"/D/Softsyde/HIS/TankSludgeProfiler-SVN/ThirdPartyLibraries/build/qwt/CHANGES-6.1",
+		"/D/Softsyde/HIS/TankSludgeProfiler-SVN/ThirdPartyLibraries/build/qwt/README",
+		"/D/Projects/Smart-Citizen-Kit/Makefile",
+		"/D/Projects/Smart-Citizen-Kit/utilities/SCK_check/SCKlibs.cpp",
+		"/D/Projects/Smart-Citizen-Kit/test/blatester.cpp",
+		"/X/Dropbox/Licenties/Microsoft/visualstudio2013.key",
+		"/D/Projects/Smart-Citizen-Kit/external/FakeIt/single_header/catch/fakeit.hpp",
+		"/D/Softsyde/HIS/zim/notebook.zim",
+		"/D/Softsyde/HIS/zim/Home.txt",
+		"/D/Softsyde/HIS/TankSludgeProfiler-SVN/README",
+		"/D/Dropbox/Zim/notebook.zim",
+		"/D/Projects/Smart-Citizen-Kit/external/Catch/single_include/catch.hpp",
+		"/D/Projects/Smart-Citizen-Kit/external/FakeIt/include/fakeit/invocation_matchers.hpp",
+		"/D/Projects/Smart-Citizen-Kit/external/FakeIt/include/fakeit/ActualInvocation.hpp",
+		"/D/Projects/Smart-Citizen-Kit/external/FakeIt/single_header/standalone/fakeit.hpp",
+		"/D/Projects/Smart-Citizen-Kit/external/FakeIt/include/fakeit/MethodMockingContext.hpp",
+		"/D/Projects/Smart-Citizen-Kit/external/FakeIt/include/fakeit/api_functors.hpp",
+		"/D/Projects/Smart-Citizen-Kit/notes.txt",
+		"/D/Projects/Smart-Citizen-Kit/sck_beta_v0_8_7_SDCARD/Constants.h",
+		"/X/Dropbox/Softsyde_encrypted/Administratie/BetaaldeFacturen/2017/transip/F0000.2017.0026.8321.pdf",
+		"/D/Projects/Smart-Citizen-Kit/external/FakeIt/FakeIt.autopkg",
+		"/D/Projects/ing_overzicht.py",
+		"/C/Users/sytse/AppData/Local/Temp/NL21INGB0691457352_01-01-2015_11-07-2017.csv",
+		"/D/Projects/Smart-Citizen-Kit/external/Catch/include/catch.hpp",
+		"/D/Projects/Smart-Citizen-Kit.old/test/sckbase_test.cpp",
+		"/D/Projects/Smart-Citizen-Kit/native/arduino-stubs/debug.h",
+		"/D/Projects/Smart-Citizen-Kit/test/testmain.cpp",
+		"/D/Projects/Smart-Citizen-Kit/test/wifi_test.cpp",
+		"/D/Projects/Smart-Citizen-Kit/sck_beta_v0_9/WiFi.cpp",
+		"/D/Projects/Smart-Citizen-Kit.old/sck_beta_v0_9/SCKBase.h",
+		"/D/Projects/Smart-Citizen-Kit/main.exe.stackdump",
+		"/D/Projects/Smart-Citizen-Kit/Makefile.bla",
+		"/X/Dropbox/Licenties/Sublime_Text_3_20141203.txt"
+	],
+	"find":
+	{
+		"height": 40.0
+	},
+	"find_in_files":
+	{
+		"height": 104.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"Moog.he",
+			"moog",
+			"SkipTest"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "tests/test_locator.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2022,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1161,
+								1161
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "helpers/locator.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1545,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								584,
+								584
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 40.0
+	},
+	"input":
+	{
+		"height": 40.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.SublimeLinter":
+	{
+		"height": 0.0
+	},
+	"output.SublimeLinter Messages":
+	{
+		"height": 126.0
+	},
+	"output.UnitTesting":
+	{
+		"height": 284.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "Moog.sublime-project",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 367.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
