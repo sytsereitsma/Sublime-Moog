@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"mock",
+				"mock_window"
+			],
+			[
+				"ma",
+				"MagicMock\tclass"
+			],
+			[
+				"pro",
+				"project_data\tstatement"
+			],
+			[
 				"mo",
 				"mock_glob\tparam"
 			],
@@ -84,18 +96,20 @@
 	"buffers":
 	[
 		{
-			"file": "tests/test_locator.py",
+			"file": "tests/test_settings.py",
 			"settings":
 			{
-				"buffer_size": 2022,
+				"buffer_size": 1104,
+				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "helpers/locator.py",
+			"file": "helpers/settings.py",
 			"settings":
 			{
-				"buffer_size": 1545,
+				"buffer_size": 362,
+				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		}
@@ -111,6 +125,34 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"unitt",
+				"UnitTesting: Test Current Package"
+			],
+			[
+				"unit",
+				"UnitTesting: Test Current File"
+			],
+			[
+				"unittest",
+				"UnitTesting: Test Current Package"
+			],
+			[
+				"pyth",
+				"Set Syntax: Python"
+			],
+			[
+				"json",
+				"Set Syntax: JSON"
+			],
+			[
+				"markdo",
+				"Set Syntax: Markdown"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
 			[
 				"Unit",
 				"UnitTesting: Test Current Package"
@@ -170,15 +212,17 @@
 	],
 	"file_history":
 	[
+		"/C/Users/sytse/AppData/Roaming/Sublime Text 3/Packages/Moog/tests/test_locator.py",
 		"/C/Users/sytse/AppData/Roaming/Sublime Text 3/Packages/Moog/Moog.sublime-project",
+		"/C/Users/sytse/AppData/Roaming/Sublime Text 3/Packages/Anaconda/Anaconda.sublime-settings",
+		"/C/Users/sytse/AppData/Roaming/Sublime Text 3/Packages/Moog/helpers/locator.py",
+		"/C/Users/sytse/AppData/Roaming/Sublime Text 3/Packages/User/Anaconda.sublime-settings",
 		"/C/Users/sytse/AppData/Roaming/Sublime Text 3/Packages/Moog/helpers/__init__.py",
 		"/C/Users/sytse/AppData/Roaming/Sublime Text 3/Packages/EasyClangComplete/tests/test_c_cpp_properties.py",
 		"/C/Users/sytse/AppData/Roaming/Sublime Text 3/Packages/EasyClangComplete/unittesting.json",
 		"/C/Users/sytse/AppData/Roaming/Sublime Text 3/Packages/Moog/.travis.yml",
-		"/C/Users/sytse/AppData/Roaming/Sublime Text 3/Packages/Moog/tests/test_locator.py",
 		"/C/Users/sytse/AppData/Roaming/Sublime Text 3/Packages/Moog/build.py",
 		"/C/Users/sytse/AppData/Roaming/Sublime Text 3/Packages/Moog/utils.py",
-		"/C/Users/sytse/AppData/Roaming/Sublime Text 3/Packages/Moog/helpers/locator.py",
 		"/C/Users/sytse/AppData/Roaming/Sublime Text 3/Packages/Moog/unittesting.json",
 		"/C/Users/sytse/AppData/Roaming/Sublime Text 3/Packages/EasyClangComplete/tests/__init__.py",
 		"/C/Users/sytse/AppData/Roaming/Sublime Text 3/Packages/Moog/__init__.py",
@@ -190,7 +234,6 @@
 		"/C/Users/sytse/AppData/Roaming/Sublime Text 3/Packages/Anaconda/test/test_doc.py",
 		"/C/Users/sytse/AppData/Roaming/Sublime Text 3/Packages/EasyClangComplete/tests/test_cmake_file.py",
 		"/C/Users/sytse/AppData/Roaming/Sublime Text 3/Packages/Anaconda/README.md",
-		"/C/Users/sytse/AppData/Roaming/Sublime Text 3/Packages/User/Anaconda.sublime-settings",
 		"/D/Projects/ThrusterLights/README.md",
 		"/D/tmp/simple.proto",
 		"/D/Projects/ThrusterLights/ThrusterLights.ino",
@@ -296,8 +339,7 @@
 		"/D/Projects/Smart-Citizen-Kit/sck_beta_v0_9/WiFi.cpp",
 		"/D/Projects/Smart-Citizen-Kit.old/sck_beta_v0_9/SCKBase.h",
 		"/D/Projects/Smart-Citizen-Kit/main.exe.stackdump",
-		"/D/Projects/Smart-Citizen-Kit/Makefile.bla",
-		"/X/Dropbox/Licenties/Sublime_Text_3_20141203.txt"
+		"/D/Projects/Smart-Citizen-Kit/Makefile.bla"
 	],
 	"find":
 	{
@@ -315,6 +357,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"python",
+			"path",
 			"Moog.he",
 			"moog",
 			"SkipTest"
@@ -340,26 +384,59 @@
 			[
 				{
 					"buffer": 0,
-					"file": "tests/test_locator.py",
+					"file": "tests/test_settings.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2022,
+						"buffer_size": 1104,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1161,
-								1161
+								938,
+								938
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"SL.13.region_keys":
+							[
+							],
+							"_anf_new": "",
+							"auto_complete_triggers":
+							[
+								{
+									"characters": ".>:",
+									"selector": "source.c++ - string - comment - constant.numeric"
+								},
+								{
+									"characters": ".>:",
+									"selector": "source.c - string - comment - constant.numeric"
+								},
+								{
+									"characters": ".>: ",
+									"selector": "source.objc++ - string - comment - constant.numeric"
+								},
+								{
+									"characters": ".>: ",
+									"selector": "source.objc - string - comment - constant.numeric"
+								},
+								{
+									"characters": ".>: ",
+									"selector": "source.cuda-c++ - string - comment - constant.numeric"
+								},
+								{
+									"characters": ".",
+									"selector": "source.python - string - constant.numeric"
+								},
+								{
+									"characters": ".",
+									"selector": "source.python - string - constant.numeric"
+								}
+							],
+							"syntax": "Packages/Python/Python.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -370,26 +447,68 @@
 				},
 				{
 					"buffer": 1,
-					"file": "helpers/locator.py",
+					"file": "helpers/settings.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1545,
+						"buffer_size": 362,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								584,
-								584
+								129,
+								129
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"_anf_new": "",
+							"auto_complete_triggers":
+							[
+								{
+									"characters": ".>:",
+									"selector": "source.c++ - string - comment - constant.numeric"
+								},
+								{
+									"characters": ".>:",
+									"selector": "source.c - string - comment - constant.numeric"
+								},
+								{
+									"characters": ".>: ",
+									"selector": "source.objc++ - string - comment - constant.numeric"
+								},
+								{
+									"characters": ".>: ",
+									"selector": "source.objc - string - comment - constant.numeric"
+								},
+								{
+									"characters": ".>: ",
+									"selector": "source.cuda-c++ - string - comment - constant.numeric"
+								},
+								{
+									"characters": ".",
+									"selector": "source.python - string - constant.numeric"
+								},
+								{
+									"characters": ".",
+									"selector": "source.python - string - constant.numeric"
+								},
+								{
+									"characters": ".",
+									"selector": "source.python - string - constant.numeric"
+								},
+								{
+									"characters": ".",
+									"selector": "source.python - string - constant.numeric"
+								},
+								{
+									"characters": ".",
+									"selector": "source.python - string - constant.numeric"
+								}
+							],
+							"syntax": "Packages/Python/Python.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
