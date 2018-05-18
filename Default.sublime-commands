@@ -1,11 +1,7 @@
 [
     {
-        "caption": "Moog: Compile",
-        "command": "compile"
-    },
-    {
-        "caption": "Moog: Test Project",
-        "command": "test_project"
+        "caption": "Moog: Foo",
+        "command": "foo"
     },
     {
         "caption": "Moog: New class",

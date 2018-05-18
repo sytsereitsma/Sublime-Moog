@@ -1,6 +1,8 @@
 import sublime
 import sublime_plugin
 import os
+import logging
+
 
 HEADER_TEMPLATE = """\
 #ifndef {include_guard}
@@ -185,3 +187,9 @@ class NewHeaderCommand(NewFileBase):
             class_name = input_name
 
         self.create_header("", class_name)
+
+
+class FooCommand(sublime_plugin.WindowCommand):
+    def run(self):
+        settings = sublime.load_settings("Moog.sublime-settings")
+        logging.error(self.window.project_data())
