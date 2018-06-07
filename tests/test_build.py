@@ -21,14 +21,14 @@ class TestMoogBuildCommand(TestCase):
         mock_get_test_project.return_value = "FooTester.vcxproj"
         self.assertEqual("FooTester.vcxproj",
                          self.command.get_project_file("foo.cpp", True))
-        mock_get_test_project.assert_called_with("foo.cpp", "VS2015")
+        mock_get_test_project.assert_called_with("foo.cpp")
 
     @mock.patch("Moog.helpers.locator.get_vc_project")
     def test_get_project_file(self, mock_get_project):
         mock_get_project.return_value = "Foo.vcxproj"
         self.assertEqual("Foo.vcxproj",
                          self.command.get_project_file("foo.cpp", False))
-        mock_get_project.assert_called_with("foo.cpp", "VS2015")
+        mock_get_project.assert_called_with("foo.cpp")
 
     @mock.patch("Moog.helpers.locator.get_vc_project", return_value="")
     def test_get_project_file_failure(self, _):

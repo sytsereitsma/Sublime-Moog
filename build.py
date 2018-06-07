@@ -6,9 +6,9 @@ import threading
 from .helpers import locator
 
 # todo: MAke these settings
-VS_VERSION = "VS2015"
 MSBUILD = {
-    "VS2015": r"C:\Program Files (x86)\MSBuild\14.0\Bin\amd64\MSBuild.exe"
+    "VS2015": r"C:\Program Files (x86)\MSBuild\14.0\Bin\amd64\MSBuild.exe",
+    "VS2017": r"C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\15.0\Bin\MSBuild.exe"
 }
 
 
@@ -41,9 +41,9 @@ class MoogBuildCommand(sublime_plugin.WindowCommand):
 
     def get_project_file(self, filename, test):
         if test:
-            project_file = locator.get_vc_test_project(filename, VS_VERSION)
+            project_file = locator.get_vc_test_project(filename)
         else:
-            project_file = locator.get_vc_project(filename, VS_VERSION)
+            project_file = locator.get_vc_project(filename)
 
         if not project_file:
             self.write_to_panel("Cannot find project for '{}'\n"
@@ -60,7 +60,7 @@ class MoogBuildCommand(sublime_plugin.WindowCommand):
         if not project_file:
             return None
 
-        vs_version = "VS2015"
+        vs_version = "VS2015" if "VS2015" in project_file else "VS2017"
         args = ["cmd", "/C", MSBUILD[vs_version]]
         args.extend([
             project_file,
