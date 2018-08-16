@@ -10,6 +10,7 @@ HEADER_TEMPLATE = """\
 
 {namespace_start}
 class {class_name} {{
+public:
     {class_name} ();
     ~{class_name} ();
 }};
@@ -40,8 +41,8 @@ TESTER_TEMPLATE = """\
 class {namespace_name}{class_name}Tester : public testing::Test {{
 }};
 
-TEST_F({namespace_name}{class_name}Tester, Test) {{
-    FAIL();
+TEST_F ({namespace_name}{class_name}Tester, Test) {{
+    FAIL ();
 }}
 """
 
@@ -187,7 +188,6 @@ class NewHeaderCommand(NewFileBase):
             class_name = input_name
 
         self.create_header("", class_name)
-
 
 class FooCommand(sublime_plugin.WindowCommand):
     def run(self):

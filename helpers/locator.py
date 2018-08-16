@@ -4,8 +4,9 @@ import os
 
 def _get_vs_project_dir(root_dir, relative_bld_dir):
     bld_dir = os.path.join(root_dir, relative_bld_dir)
-    if os.path.isdir(os.path.join(bld_dir, "VS2017")):
-        return os.path.join(bld_dir, "VS2017")
+    vs2017_dir = os.path.join(bld_dir, "VS2017")
+    if os.path.isdir(vs2017_dir) and glob.glob(os.path.join(vs2017_dir, "*.vcxproj")):
+        return vs2017_dir
 
     return os.path.join(bld_dir, "VS2015")
 
