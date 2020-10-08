@@ -5,7 +5,7 @@
 			"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
 			"name": "Anaconda Python Builder",
 			"selector": "source.python",
-			"shell_cmd": "\"C:/Python34/python.exe\" -u \"$file\""
+			"shell_cmd": "\"c:/Python36/python.exe\" -u \"$file\""
 		}
 	],
 	"folders":
@@ -14,7 +14,11 @@
 			"path": "."
 		}
 	],
-	"settings":{
-	    "Moog": {"solution_file": "kjdfkdhsf"}
+	"settings":
+	{
+		"Moog":
+		{
+			"solution_file": "kjdfkdhsf"
+		}
 	}
 }

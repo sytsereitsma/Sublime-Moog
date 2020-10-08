@@ -1,7 +1,8 @@
+import os
+import re
+import logging
 import sublime
 import sublime_plugin
-import os
-import logging
 
 
 HEADER_TEMPLATE = """\
@@ -188,6 +189,87 @@ class NewHeaderCommand(NewFileBase):
             class_name = input_name
 
         self.create_header("", class_name)
+
+
+class UpdateMockCommand(sublime_plugin.TextCommand):
+    def run(self, edit):
+        region = self.replace_next_mock(edit, sublime.Region(0, 1))
+        prev_end = -1
+        while region is not None and prev_end < region.a:
+            prev_end = region.b
+            region = self.replace_next_mock(edit, region)
+
+    def replace_next_mock(self, edit, region):
+        start_mock = self.view.find(r"MOCK_(CONST_)?METHOD\d*", region.a)
+        if start_mock is not None:
+            end_mock = self.view.find(";", start_mock.b)
+            if end_mock is not None:
+                self.update_mock_method(edit, sublime.Region(start_mock.a, end_mock.b))
+                return sublime.Region(end_mock.b, end_mock.b + 1)
+
+        return None
+
+    @staticmethod
+    def cleanup_declaration(mock_declaration):
+        mock_declaration = mock_declaration.replace("\n", "")
+        mock_declaration = mock_declaration.replace("\r", "")
+        mock_declaration = re.sub(r"\s+", " ", mock_declaration)
+
+        return mock_declaration
+
+    @staticmethod
+    def parenthesize_arguments(arguments):
+        args = arguments.split(",")
+        parenthesized = []
+        this_arg = ""
+
+        def append_this_arg(arg):
+            parenthesized.append(arg.strip())
+            return ""
+
+        lt_count = 0  # '<' count (nested templates)
+        for a in args:
+            if lt_count == 0 and "<" in a and ">" not in a:
+                this_arg += "(" + a.strip()
+                lt_count += 1
+            else:
+                if this_arg:
+                    this_arg += ", "
+
+                this_arg += a.strip()
+                if lt_count != 0 and ">" in a:
+                    lt_count -= 1
+                    if lt_count == 0:
+                        this_arg += ")"
+                        this_arg = append_this_arg(this_arg)
+                else:
+                    this_arg = append_this_arg(this_arg)
+
+        if this_arg:
+            append_this_arg(this_arg)
+
+        return ", ".join(parenthesized)
+
+    def update_mock_method(self, edit, region):
+        mock_declaration = self.cleanup_declaration(self.view.substr(region))
+
+        pattern = r".+\("
+        pattern += r"([A-Za-z0-9_]+)\s*"  # function name
+        pattern += r"\s*,\s*"
+        pattern += r"([A-Za-z0-9_:&\*\s]+)\("  # function return type
+        pattern += r"(.*)\s*\)\s*\);"  # function arguments
+
+        m = re.match(pattern, mock_declaration)
+        if m is not None:
+            name = m.group(1)
+            ret = m.group(2)
+            args = self.parenthesize_arguments(m.group(3))
+            qualifiers = "const, override" if "_CONST_" in mock_declaration else "override"
+            replacement_mock = "MOCK_METHOD ({}, {}, ({}), ({}));".format(
+                ret, name, args, qualifiers)
+            self.view.replace(edit, region, replacement_mock)
+
+
 
 class FooCommand(sublime_plugin.WindowCommand):
     def run(self):

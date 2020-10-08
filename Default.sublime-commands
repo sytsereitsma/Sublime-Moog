@@ -14,5 +14,9 @@
     {
         "caption": "Moog: New Header",
         "command": "new_header"
+    },
+    {
+        "caption": "Moog: Update mock",
+        "command": "update_mock"
     }
 ]
