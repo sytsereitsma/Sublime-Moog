@@ -5,7 +5,7 @@ import sublime_plugin
 
 
 class ClangTidyCommand(sublime_plugin.WindowCommand):
-    previous_command = "--fix-errors -checks=-*,modernize-use-override"
+    previous_command = "--fix-errors -checks=-*,modernize-use-override,modernize-replace-auto-ptr"
 
     def run(self):
         self.window.show_input_panel("Arguments",
