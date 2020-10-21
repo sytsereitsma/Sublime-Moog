@@ -18,5 +18,9 @@
     {
         "caption": "Moog: Update mock",
         "command": "update_mock"
+    },
+    {
+        "caption": "Clang tidy",
+        "command": "clang_tidy"
     }
 ]
