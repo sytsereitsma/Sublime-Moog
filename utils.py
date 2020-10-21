@@ -266,7 +266,7 @@ class UpdateMockCommand(sublime_plugin.TextCommand):
             args = self.parenthesize_arguments(m.group(3))
             qualifiers = "const, override" if "_CONST_" in mock_declaration else "override"
             replacement_mock = "MOCK_METHOD ({}, {}, ({}), ({}));".format(
-                ret, name, args, qualifiers)
+                ret.strip(), name.strip(), args.strip(), qualifiers.strip())
             self.view.replace(edit, region, replacement_mock)
 
 
