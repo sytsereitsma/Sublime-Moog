@@ -22,5 +22,9 @@
     {
         "caption": "Clang tidy",
         "command": "clang_tidy"
+    },
+    {
+        "caption": "Moog: Insert shell trace",
+        "command": "insert_shell_trace"
     }
 ]
