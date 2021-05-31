@@ -270,6 +270,51 @@ class UpdateMockCommand(sublime_plugin.TextCommand):
             self.view.replace(edit, region, replacement_mock)
 
 
+class StandardizeCommand(sublime_plugin.TextCommand):
+    def __init__(self, view):
+        super(StandardizeCommand, self).__init__(view)
+        classes = "|".join([
+            "string",
+            "string_view",
+            r"vector\s*<",
+            r"map\s*<",
+            r"list\s*<",
+            r"set\s*<",
+            r"pair\s*<",
+            "endl",
+            "fstream",
+            "ifstream",
+            "ofstream",
+            "unique_ptr",
+            "shared_ptr",
+        ])
+
+        self._std_re = re.compile(
+            r"(?<!std::)\b(" + classes + r")\b(.+[;{])"
+        )
+
+    def run(self, edit):
+        region = self.process_next_line(edit, sublime.Region(0, 1))
+        count = 0
+        while region is not None and region.a < self.view.size():
+            region = self.process_next_line(edit, region)
+
+            count += 1
+            if count > 1000:
+                logging.error("whoops {}, {}".format(region.a, region.b))
+                break
+
+    def process_next_line(self, edit, region):
+        region = self.view.full_line(region)
+        org_line = self.view.substr(region)
+        line = self._std_re.sub(r"std::\1\2", org_line)
+        if line != org_line:
+            logging.info("< " + org_line.strip())
+            logging.info("> " + line.strip())
+
+        self.view.replace(edit, region, line)
+        return sublime.Region(region.b + 1, region.b + 2)
+
 
 class FooCommand(sublime_plugin.WindowCommand):
     def run(self):

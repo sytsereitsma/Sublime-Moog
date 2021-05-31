@@ -22,5 +22,9 @@
     {
         "caption": "Clang tidy",
         "command": "clang_tidy"
+    },
+    {
+        "caption": "Moog: Standardize",
+        "command": "standardize"
     }
 ]
