@@ -26,5 +26,9 @@
     {
         "caption": "Moog: Standardize",
         "command": "standardize"
+    },
+    {
+        "caption": "Moog: Insert shell trace",
+        "command": "insert_shell_trace"
     }
 ]

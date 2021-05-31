@@ -204,7 +204,7 @@ class UpdateMockCommand(sublime_plugin.TextCommand):
         if start_mock is not None:
             end_mock = self.view.find(";", start_mock.b)
             if end_mock is not None:
-                self.update_mock_method(edit, sublime.Region(start_mock.a, end_mock.b))
+                self.update_mock_method_in_view(edit, sublime.Region(start_mock.a, end_mock.b))
                 return sublime.Region(end_mock.b, end_mock.b + 1)
 
         return None
@@ -250,25 +250,44 @@ class UpdateMockCommand(sublime_plugin.TextCommand):
 
         return ", ".join(parenthesized)
 
-    def update_mock_method(self, edit, region):
-        mock_declaration = self.cleanup_declaration(self.view.substr(region))
+    def update_mock_method_in_view(self, edit, region):
+        mock_declaration = self.view.substr(region)
+        new_mock_declaration = self.update_mock_method(mock_declaration)
+        if new_mock_declaration is not None:
+            self.view.replace(edit, region, new_mock_declaration)
+
+    @staticmethod
+    def update_mock_method(mock_declaration):
+        mock_declaration = UpdateMockCommand.cleanup_declaration(mock_declaration)
 
         pattern = r".+\("
         pattern += r"([A-Za-z0-9_]+)\s*"  # function name
         pattern += r"\s*,\s*"
-        pattern += r"([A-Za-z0-9_:&\*\s]+)\("  # function return type
+        pattern += r"([A-Za-z0-9_:&\*\s<>]+)\("  # function return type
         pattern += r"(.*)\s*\)\s*\);"  # function arguments
 
         m = re.match(pattern, mock_declaration)
         if m is not None:
             name = m.group(1)
             ret = m.group(2)
-            args = self.parenthesize_arguments(m.group(3))
+            args = UpdateMockCommand.parenthesize_arguments(m.group(3))
             qualifiers = "const, override" if "_CONST_" in mock_declaration else "override"
             replacement_mock = "MOCK_METHOD ({}, {}, ({}), ({}));".format(
                 ret.strip(), name.strip(), args.strip(), qualifiers.strip())
-            self.view.replace(edit, region, replacement_mock)
+            return replacement_mock
 
+        return None
+
+
+class InsertShellTraceCommand(sublime_plugin.TextCommand):
+    def run(self, edit):
+        sel = self.view.sel()
+        line_number, _ = self.view.rowcol(sel[0].begin())
+        file_name = self.view.file_name().replace("\\", "/")
+        trace_msg = ">&2 echo \"#### {}({})\"\n".format(file_name, line_number)
+        line_region = self.view.line(sel[0])
+        trace_msg += self.view.substr(line_region)
+        self.view.replace(edit, line_region, trace_msg)
 
 class StandardizeCommand(sublime_plugin.TextCommand):
     def __init__(self, view):
